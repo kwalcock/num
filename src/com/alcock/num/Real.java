@@ -3,6 +3,8 @@ package com.alcock.num;
 public class Real {
 	protected static Real Zero = new Real(0); // identity element for addition
 	protected static Real One = new Real(1); // identity element for multiplication
+	protected static Real Pi = new Real(Math.PI);
+	protected static Real E = new Real(Math.E);
 	
 	protected double value;
 	
@@ -44,6 +46,26 @@ public class Real {
 				new Real(Math.pow(value, other.value));
 	}
 	
+	public boolean lt(Real other) {
+		return this.value < other.value;
+	}
+	
+	public boolean gt(Real other) {
+		return this.value > other.value;
+	}
+	
+	public boolean eq(Real other) {
+		return this.value == other.value;
+	}
+	
+	public boolean lte(Real other) {
+		return lt(other) || eq(other);
+	}
+	
+	public boolean gte(Real other) {
+		return gt(other) || eq(other);
+	}
+	
 	@Override
 	public boolean equals(Object other) {
 		if (this == other)
@@ -53,12 +75,21 @@ public class Real {
 		else {
 			Real that = (Real) other;
 			
-			return value == that.value;
+			return eq(that);
 		}
 	}
 	
 	@Override
 	public int hashCode() {
 		return Double.hashCode(value);
+	}
+	
+	@Override
+	public String toString() {
+		return "Real(" + value + ")";
+	}
+	
+	public boolean equals(Real other, Real epsilon) {
+		return this.sub(other).len().lte(epsilon.len());
 	}
 }
