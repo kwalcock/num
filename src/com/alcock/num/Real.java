@@ -46,24 +46,8 @@ public class Real {
 				new Real(Math.pow(value, other.value));
 	}
 	
-	public boolean lt(Real other) {
-		return this.value < other.value;
-	}
-	
-	public boolean gt(Real other) {
-		return this.value > other.value;
-	}
-	
 	public boolean eq(Real other) {
 		return this.value == other.value;
-	}
-	
-	public boolean lte(Real other) {
-		return lt(other) || eq(other);
-	}
-	
-	public boolean gte(Real other) {
-		return gt(other) || eq(other);
 	}
 	
 	@Override
