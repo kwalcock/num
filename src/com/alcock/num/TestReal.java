@@ -40,7 +40,7 @@ class TestReal {
 		assertEquals(roots.size(), 2);
 		Real root1 = roots.get(0);
 		Real root2 = roots.get(1);
-		Real epsilon = new Real(0.00000001);
+		double epsilon = 0.00000001;
 		Real ans1 = new Real(2);
 		Real ans2 = new Real(3);
 		

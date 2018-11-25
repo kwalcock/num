@@ -12,8 +12,8 @@ public class Real {
 		this.value = value;
 	}
 	
-	public Real len() {
-		return value >= 0 ? this : new Real(-value);
+	public double len() {
+		return Math.abs(value);
 	}
 	
 	public Real neg() { // additive inverse, negation
@@ -89,7 +89,7 @@ public class Real {
 		return "Real(" + value + ")";
 	}
 	
-	public boolean equals(Real other, Real epsilon) {
-		return this.sub(other).len().lte(epsilon.len());
+	public boolean equals(Real other, double epsilon) {
+		return this.sub(other).len() <  epsilon;
 	}
 }
