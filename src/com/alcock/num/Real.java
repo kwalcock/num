@@ -1,10 +1,10 @@
 package com.alcock.num;
 
 public class Real {
-	protected static Real Zero = new Real(0); // identity element for addition
-	protected static Real One = new Real(1); // identity element for multiplication
-	protected static Real Pi = new Real(Math.PI);
-	protected static Real E = new Real(Math.E);
+	public static Real Zero = new Real(0); // identity element for addition
+	public static Real One = new Real(1); // identity element for multiplication
+	public static Real Pi = new Real(Math.PI);
+	public static Real E = new Real(Math.E);
 	
 	protected double value;
 	
